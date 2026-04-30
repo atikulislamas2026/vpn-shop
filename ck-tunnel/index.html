@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Install CK TUNNEL VPN</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="ad-slot"></div>
+
+        <div style="display: flex; align-items: center; margin-top: 15px; text-align: left;">
+            <img src="../ck-logo.png" style="width: 80px; height: 80px; border-radius: 18px; box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
+            <div style="margin-left: 15px;">
+                <h2 style="margin: 0; font-size: 20px; color: #333;">CK TUNNEL VPN</h2>
+                <p style="margin: 3px 0; color: #24a159; font-weight: bold; font-size: 13px;">Fast & Private Tunnel</p>
+                <div style="color: #777; font-size: 11px;">৪.৮ ⭐ | ১০MB | ১M+ Downloads</div>
+            </div>
+        </div>
+
+        <p style="text-align: left; margin: 20px 0 5px; color: #555; font-weight: bold; font-size: 14px;">App Screenshots (বামে-ডানে টানুন):</p>
+        <div class="screenshots-container">
+            <img src="../screen1.jpg" alt="Screenshot 1">
+            <img src="../screen2.jpg" alt="Screenshot 2">
+            <img src="../screen3.jpg" alt="Screenshot 3">
+        </div>
+
+        <button id="ck-btn" onclick="runCkInstall()" class="btn-main">INSTALL NOW</button>
+        
+        <div id="ck-loader" style="display: none; margin-top: 15px; text-align: center;">
+            <div class="spinner"></div>
+            <p style="color: #24a159; font-weight: bold; font-size: 14px;">প্রসেসিং হচ্ছে... দয়া করে অপেক্ষা করুন</p>
+        </div>
+
+        <div style="text-align: left; margin-top: 25px; border-top: 1px solid #eee; padding-top: 15px;">
+            <h3 style="font-size: 16px; color: #333;">About this app</h3>
+            <p style="color: #666; font-size: 13px; line-height: 1.6;">সিকে টানেল একটি নিরাপদ এবং দ্রুতগতির ভিপিএন সার্ভিস। এটি আপনার ইন্টারনেট কানেকশনকে ইনক্রিপ্ট করে এবং আপনার অনলাইন প্রাইভেসি নিশ্চিত করে। বিশেষ করে মিডল ইস্টে গেমিং এবং ব্রাউজিংয়ের জন্য এটি সেরা।</p>
+        </div>
+
+        <div class="ad-slot" style="margin-top: 20px;"></div>
+    </div>
+
+    <div id="overlay"></div>
+    <div id="popup">
+        <h2 style="color:#d63031; font-size: 20px;">PLEASE INSTALL NOW</h2>
+        <p style="color: #444; font-size: 14px;">আপনার ফাইলটি তৈরি হয়েছে। ডাউনলোড শুরু করতে নিচের বাটনে ক্লিক করুন।</p>
+        <hr style="border: 0.5px solid #eee; margin: 15px 0;">
+        <button onclick="window.location.reload()" class="btn" style="width: 100%; padding: 12px;">OK</button>
+    </div>
+
+    <script>
+        function runCkInstall() {
+            // বাটন লুকিয়ে লোডিং দেখানো
+            document.getElementById('ck-btn').style.display = 'none';
+            document.getElementById('ck-loader').style.display = 'block';
+            
+            setTimeout(function() {
+                // পপ-আপ দেখানো
+                document.getElementById('popup').style.display = 'block';
+                document.getElementById('overlay').style.display = 'block';
+                
+                // আপনার CK TUNNEL এর ডাউনলোড লিংক এখানে দিন
+                window.location.href = "YOUR_CK_TUNNEL_LINK_HERE";
+            }, 3000); 
+        }
+    </script>
+
+    <script src="../config.js"></script>
+</body>
+</html>
