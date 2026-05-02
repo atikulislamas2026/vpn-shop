@@ -1,68 +1,282 @@
-body {
-    font-family: 'Inter', sans-serif;
-    overflow-x: hidden;
+/* মেইন স্টাইল */
+body { 
+    font-family: 'Segoe UI', Tahoma, sans-serif; 
+    background-color: #f0f2f5; 
+    margin: 0; 
+    color: #333;
 }
 
-.glass-nav {
-    background: rgba(13, 17, 23, 0.85);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.container { 
+    max-width: 500px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
 }
 
-.badge {
-    display: inline-block;
-    border: 1px solid rgba(34, 211, 238, 0.3);
-    background: rgba(8, 145, 178, 0.1);
-    color: #22d3ee;
-    padding: 6px 20px;
-    border-radius: 9999px;
-    font-size: 0.875rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
+/* হেডার ডিজাইন */
+header { 
+    background: linear-gradient(135deg, #1e8348, #24a159); 
+    color: white; 
+    text-align: center; 
+    padding: 50px 15px; 
+    border-bottom-left-radius: 30px; 
+    border-bottom-right-radius: 30px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
 }
 
-.card {
-    background-color: #161b22;
+header h1 { font-size: 26px; margin: 0; }
+header h1 span { color: #ffd700; }
+header p { font-size: 14px; opacity: 0.9; margin-top: 8px; }
+
+/* সার্ভিস কার্ড ডিজাইন */
+.vpn-card { 
+    background: white; 
+    padding: 18px; 
+    border-radius: 20px; 
+    display: flex; 
+    align-items: center; 
+    margin-top: 20px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+    border: 1px solid #eee;
+    transition: 0.3s;
 }
 
-/* ড্রয়ার ওপেন হওয়ার এনিমেশন */
-#drawer.active {
-    width: 320px;
+.vpn-card:hover { transform: translateY(-3px); }
+
+.vpn-card img { 
+    width: 65px; 
+    height: 65px; 
+    border-radius: 15px; 
+    margin-right: 15px; 
+    object-fit: cover;
 }
 
-@media (max-width: 640px) {
-    #drawer.active {
-        width: 100%;
-    }
+.vpn-info { flex-grow: 1; }
+.vpn-info h3 { margin: 0; font-size: 17px; color: #1e8348; }
+.vpn-info p { margin: 5px 0 0; font-size: 13px; color: #666; line-height: 1.4; }
+
+/* বাটন ডিজাইন */
+.btn { 
+    background: #24a159; 
+    color: white; 
+    text-decoration: none; 
+    padding: 10px 15px; 
+    border-radius: 10px; 
+    font-weight: bold; 
+    font-size: 13px;
+    box-shadow: 0 3px 6px rgba(36, 161, 89, 0.2);
+}
+
+/* বিজ্ঞাপন বক্স */
+.ad-space { 
+    background: #fff; 
+    border: 1px dashed #24a159; 
+    text-align: center; 
+    padding: 15px; 
+    margin: 20px 0; 
+    border-radius: 15px; 
+    color: #888;
+    font-size: 13px;
+}
+
+/* ফুটার ও ওয়াটারমার্ক */
+footer { text-align: center; padding: 30px 0; font-size: 12px; color: #999; }
+.watermark { 
+    margin-top: 10px; 
+    font-size: 11px; 
+    color: #ccc; 
+    letter-spacing: 1px; 
+    text-transform: uppercase;
 }
 
 
-/* ড্রয়ার ডিফল্ট ভাবে লুকিয়ে থাকবে */
-#drawer {
-    width: 0;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    z-index: 100;
-    transition: 0.5s; /* এটি স্লাইড এনিমেশন তৈরি করবে */
+/* ল্যান্ডিং পেজ গ্রিড সিস্টেম */
+.vpn-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
 }
 
-/* যখন জাভাস্ক্রিপ্ট 'active' ক্লাস যোগ করবে তখন ড্রয়ারটি দেখা যাবে */
-#drawer.active {
-    width: 320px; /* ডেস্কটপ বা বড় স্ক্রিনে উইডথ */
+.vpn-item {
+    background: white;
+    padding: 15px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border: 1px solid #eee;
 }
 
-/* মোবাইল ফোনের জন্য ড্রয়ারের উইডথ */
-@media (max-width: 640px) {
-    #drawer.active {
-        width: 85%; /* ছোট ফোনে স্ক্রিনের ৮৫% জায়গা নিবে */
-    }
+.vpn-item img {
+    width: 65px;
+    height: 65px;
+    border-radius: 12px;
+    margin-bottom: 10px;
 }
 
-/* ব্যাকগ্রাউন্ড কালার এবং গ্লাস ইফেক্ট */
-.glass-nav {
-    background: rgba(13, 17, 23, 0.85);
-    backdrop-filter: blur(15px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+.vpn-item h4 {
+    font-size: 13px;
+    margin-bottom: 12px;
+    color: #333;
 }
+
+.btn-grid {
+    background: #24a159;
+    color: white;
+    text-decoration: none;
+    padding: 8px 0;
+    display: block;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+/* স্ক্রিনশট স্লাইডার */
+.screenshots-container { 
+    display: flex; 
+    overflow-x: auto; 
+    gap: 10px; 
+    margin: 20px 0; 
+    padding-bottom: 10px; 
+}
+.screenshots-container img { 
+    width: 140px; 
+    border-radius: 12px; 
+    border: 1px solid #ddd;
+}
+
+/* পপআপ ও মেইন বাটন */
+.btn-main { background: #24a159; color: white; border: none; width: 100%; padding: 18px; border-radius: 15px; font-size: 18px; font-weight: bold; cursor: pointer; }
+#popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 25px; z-index: 1000; width: 85%; text-align: center; box-shadow: 0 0 30px rgba(0,0,0,0.2); }
+#overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 999; }
+
+
+
+
+
+/*//////////////////////////////////////////
+
+/* ল্যান্ডিং পেজ কার্ড ডিজাইন */
+.vpn-card-new {
+    background: white;
+    padding: 15px;
+    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    border: 1px solid #eee;
+}
+
+.vpn-card-new img {
+    width: 55px;
+    height: 55px;
+    border-radius: 12px;
+}
+
+.vpn-details {
+    flex-grow: 1;
+    margin-left: 15px;
+}
+
+.vpn-details h3 {
+    margin: 0;
+    font-size: 16px;
+    color: #1e8348;
+}
+
+.btn-download {
+    background: #24a159;
+    color: white !important;
+    text-decoration: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 13px;
+}
+
+
+
+
+
+/* মোবাইল-ফ্রেন্ডলি স্ক্রিনশট স্লাইডার ডিজাইন */
+.screenshots-section {
+    margin-top: 30px;
+    padding: 0 10px;
+}
+
+.screenshots-section h2 {
+    font-size: 16px;
+    color: #1e8348;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.screenshots-container {
+    width: 100%;
+    overflow-x: auto; /* ডানে-বামে স্ক্রোল করার জন্য */
+    padding-bottom: 15px; /* স্ক্রলবারের জন্য জায়গা */
+}
+
+/* স্লাইডারের ভেতরের কন্টেইনার */
+.screenshot-wrapper {
+    display: flex; /* ছবিগুলো পাশাপাশি সাজানোর জন্য */
+    gap: 15px; /* ছবির মাঝখানের ফাকা জায়গা */
+    width: max-content; /* ছবির সংখ্যা অনুযায়ী কন্টেইনার বড় হবে */
+}
+
+/* স্লাইডারের ভেতরের ছবি */
+.screenshot-wrapper img {
+    width: 150px; /* ছবিতে সাইজ, মোবাইলের জন্য পারফেক্ট */
+    height: auto;
+    border-radius: 12px;
+    border: 2px solid #ddd;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.screenshot-wrapper img:hover {
+    transform: scale(1.05); /* ক্লিক করার সময় একটু বড় হবে */
+}
+
+/* স্লাইডারের স্ক্রলবার সুন্দর করার জন্য */
+.screenshots-container::-webkit-scrollbar {
+    height: 6px; /* স্ক্রলবারের উচ্চতা */
+}
+
+.screenshots-container::-webkit-scrollbar-thumb {
+    background: #24a159; /* স্ক্রলবারের কালার */
+    border-radius: 10px;
+}
+
+.screenshots-container::-webkit-scrollbar-track {
+    background: #f0f2f5; /* স্ক্রলবারের ট্র্যাকের কালার */
+}
+
+
+
+/* বিজ্ঞাপন বক্সের জন্য সহজ স্টাইল */
+.ad-space {
+    width: 100%;
+    max-width: 320px;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none !important; /* ড্যাশ বর্ডার সরিয়ে দেবে */
+    min-height: 50px; /* চিকন ব্যানারের জন্য এটি যথেষ্ট */
+}
+
+.ad-space iframe {
+    border: none;
+    max-width: 100%;
+}
+
+
+
+
+
+
+
+
+
