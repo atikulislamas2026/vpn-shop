@@ -1,282 +1,224 @@
-/* মেইন স্টাইল */
+/* মাস্টার রিসেট */
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
 body { 
-    font-family: 'Segoe UI', Tahoma, sans-serif; 
-    background-color: #f0f2f5; 
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+    background: #f0f2f5; 
     margin: 0; 
-    color: #333;
+    padding: 0; 
+    overflow-x: hidden; 
+    width: 100%; 
 }
 
 .container { 
-    max-width: 500px; 
+    width: 100%; 
+    max-width: 450px; 
     margin: 0 auto; 
-    padding: 0 15px; 
+    padding: 15px; 
 }
 
 /* হেডার ডিজাইন */
 header { 
-    background: linear-gradient(135deg, #1e8348, #24a159); 
+    background: #1e8348; 
     color: white; 
     text-align: center; 
-    padding: 50px 15px; 
-    border-bottom-left-radius: 30px; 
-    border-bottom-right-radius: 30px; 
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    padding: 30px 10px; 
+    border-radius: 0 0 25px 25px; 
+    margin-bottom: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+header h1 { margin: 0; font-size: 22px; letter-spacing: 1px; }
+header h1 span { color: #ffd700; }
+
+/* বিজ্ঞাপন বক্স (রেসপনসিভ) */
+.ad-box-top, .ad-space, .ad-box-large { 
+    width: 100% !important; 
+    min-height: 60px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    margin: 15px 0;
+    overflow: hidden; 
+    background: #e2e2e2;
+    border-radius: 10px;
 }
 
-header h1 { font-size: 26px; margin: 0; }
-header h1 span { color: #ffd700; }
-header p { font-size: 14px; opacity: 0.9; margin-top: 8px; }
+/* হোমপেজ লিস্ট ভিউ */
+.vpn-list-view { display: flex; flex-direction: column; gap: 15px; }
 
-/* সার্ভিস কার্ড ডিজাইন */
-.vpn-card { 
+.vpn-item { 
     background: white; 
-    padding: 18px; 
-    border-radius: 20px; 
     display: flex; 
     align-items: center; 
-    margin-top: 20px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-    border: 1px solid #eee;
-    transition: 0.3s;
-}
-
-.vpn-card:hover { transform: translateY(-3px); }
-
-.vpn-card img { 
-    width: 65px; 
-    height: 65px; 
-    border-radius: 15px; 
-    margin-right: 15px; 
-    object-fit: cover;
-}
-
-.vpn-info { flex-grow: 1; }
-.vpn-info h3 { margin: 0; font-size: 17px; color: #1e8348; }
-.vpn-info p { margin: 5px 0 0; font-size: 13px; color: #666; line-height: 1.4; }
-
-/* বাটন ডিজাইন */
-.btn { 
-    background: #24a159; 
-    color: white; 
-    text-decoration: none; 
-    padding: 10px 15px; 
-    border-radius: 10px; 
-    font-weight: bold; 
-    font-size: 13px;
-    box-shadow: 0 3px 6px rgba(36, 161, 89, 0.2);
-}
-
-/* বিজ্ঞাপন বক্স */
-.ad-space { 
-    background: #fff; 
-    border: 1px dashed #24a159; 
-    text-align: center; 
     padding: 15px; 
-    margin: 20px 0; 
-    border-radius: 15px; 
-    color: #888;
-    font-size: 13px;
-}
-
-/* ফুটার ও ওয়াটারমার্ক */
-footer { text-align: center; padding: 30px 0; font-size: 12px; color: #999; }
-.watermark { 
-    margin-top: 10px; 
-    font-size: 11px; 
-    color: #ccc; 
-    letter-spacing: 1px; 
-    text-transform: uppercase;
-}
-
-
-/* ল্যান্ডিং পেজ গ্রিড সিস্টেম */
-.vpn-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
-    margin: 20px 0;
-}
-
-.vpn-item {
-    background: white;
-    padding: 15px;
-    border-radius: 20px;
-    text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-radius: 18px; 
+    text-decoration: none; 
+    color: #333;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    transition: 0.3s;
     border: 1px solid #eee;
 }
 
-.vpn-item img {
-    width: 65px;
-    height: 65px;
-    border-radius: 12px;
-    margin-bottom: 10px;
+.vpn-item img { 
+    width: 55px; 
+    height: 55px; 
+    border-radius: 14px; 
+    object-fit: cover;
+    margin-right: 15px; 
 }
 
-.vpn-item h4 {
-    font-size: 13px;
-    margin-bottom: 12px;
-    color: #333;
+.vpn-text { flex: 1; text-align: left; }
+.vpn-text h3 { margin: 0; font-size: 16px; color: #1e8348; font-weight: 600; }
+.vpn-text p { margin: 4px 0 0; font-size: 12px; color: #777; }
+
+.open-btn { 
+    background: #f0fdf4; 
+    color: #1e8348; 
+    padding: 6px 12px; 
+    border-radius: 12px; 
+    font-size: 12px; 
+    font-weight: bold; 
+    border: 1px solid #dcfce7;
 }
 
-.btn-grid {
-    background: #24a159;
-    color: white;
-    text-decoration: none;
-    padding: 8px 0;
-    display: block;
-    border-radius: 8px;
-    font-size: 12px;
-    font-weight: bold;
+/* ল্যান্ডিং পেজ (Details) ডিজাইন */
+.landing-card { 
+    background: white; 
+    padding: 30px 20px; 
+    border-radius: 25px; 
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08); 
+    text-align: center;
+    /* কার্ডটি হালকাভাবে ভেসে ওঠার অ্যানিমেশন */
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+.app-logo-large { 
+    width: 100px; 
+    height: 100px; 
+    border-radius: 22px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    margin-bottom: 15px;
+}
+
+.app-name { font-size: 22px; margin: 10px 0 5px; color: #1e8348; }
+.app-dev { font-size: 13px; color: #999; margin-bottom: 20px; }
+
+/* এনিমেটেড ইনস্টল বাটন */
+.install-btn { 
+    display: block; 
+    background: #24a159; 
+    color: white !important; 
+    text-decoration: none; 
+    padding: 16px; 
+    border-radius: 15px; 
+    font-weight: bold; 
+    font-size: 18px;
+    margin: 20px 0;
+    box-shadow: 0 4px 15px rgba(36, 161, 89, 0.3);
+    /* পালস অ্যানিমেশন যুক্ত করা হয়েছে */
+    animation: pulse-animation 2s infinite;
+    transition: transform 0.2s ease;
+}
+
+.install-btn:active {
+    transform: scale(0.95);
 }
 
 /* স্ক্রিনশট স্লাইডার */
-.screenshots-container { 
-    display: flex; 
+.screenshots { 
     overflow-x: auto; 
+    display: flex; 
     gap: 10px; 
-    margin: 20px 0; 
-    padding-bottom: 10px; 
+    padding: 10px 0;
+    scrollbar-width: none;
+    /* স্লাইড আপ অ্যানিমেশন */
+    animation: slideUp 1s ease-out;
 }
-.screenshots-container img { 
-    width: 140px; 
+.screenshots::-webkit-scrollbar { display: none; }
+
+.screenshots img { 
+    width: 150px; 
     border-radius: 12px; 
-    border: 1px solid #ddd;
+    border: 1px solid #eee; 
+    transition: 0.3s;
 }
 
-/* পপআপ ও মেইন বাটন */
-.btn-main { background: #24a159; color: white; border: none; width: 100%; padding: 18px; border-radius: 15px; font-size: 18px; font-weight: bold; cursor: pointer; }
-#popup { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 30px; border-radius: 25px; z-index: 1000; width: 85%; text-align: center; box-shadow: 0 0 30px rgba(0,0,0,0.2); }
-#overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 999; }
-
-
-
-
-
-/*//////////////////////////////////////////
-
-/* ল্যান্ডিং পেজ কার্ড ডিজাইন */
-.vpn-card-new {
-    background: white;
-    padding: 15px;
-    border-radius: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    border: 1px solid #eee;
+.screenshots img:hover {
+    transform: scale(1.05);
 }
 
-.vpn-card-new img {
-    width: 55px;
-    height: 55px;
-    border-radius: 12px;
+.back-link { 
+    display: inline-block; 
+    margin-top: 20px; 
+    color: #1e8348; 
+    text-decoration: none; 
+    font-weight: bold; 
+    font-size: 15px; 
 }
 
-.vpn-details {
-    flex-grow: 1;
-    margin-left: 15px;
+footer { padding: 30px; font-size: 11px; color: #bbb; text-align: center; }
+
+/* --- অ্যানিমেশন কী-ফ্রেমসমূহ --- */
+
+/* বাটন কাঁপানোর জন্য পালস ইফেক্ট */
+@keyframes pulse-animation {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(36, 161, 89, 0.7); }
+    70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(36, 161, 89, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(36, 161, 89, 0); }
 }
 
-.vpn-details h3 {
-    margin: 0;
-    font-size: 16px;
-    color: #1e8348;
+/* কার্ড ফেইড ইন */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
-.btn-download {
-    background: #24a159;
-    color: white !important;
-    text-decoration: none;
-    padding: 8px 20px;
-    border-radius: 10px;
-    font-weight: bold;
-    font-size: 13px;
+/* স্ক্রিনশট নিচ থেকে ভেসে ওঠা */
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
 
 
 
 
-
-/* মোবাইল-ফ্রেন্ডলি স্ক্রিনশট স্লাইডার ডিজাইন */
-.screenshots-section {
-    margin-top: 30px;
-    padding: 0 10px;
+/* অ্যাপ স্ট্যাটাস বক্স - একদম ফিক্সড এক লাইনে রাখার জন্য */
+.app-stats-row {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-around !important;
+    align-items: center !important;
+    background: #ffffff;
+    padding: 15px 10px;
+    border-radius: 15px;
+    margin: 20px 0;
+    border: 1px solid #f0f0f0;
+    width: 100%;
 }
 
-.screenshots-section h2 {
-    font-size: 16px;
-    color: #1e8348;
-    margin-bottom: 15px;
+.stat-unit {
+    flex: 1;
     text-align: center;
+    display: block !important; /* একটার নিচে একটা যেন না যায় */
 }
 
-.screenshots-container {
-    width: 100%;
-    overflow-x: auto; /* ডানে-বামে স্ক্রোল করার জন্য */
-    padding-bottom: 15px; /* স্ক্রলবারের জন্য জায়গা */
+.stat-top {
+    font-size: 15px;
+    font-weight: 700;
+    color: #202124;
+    display: block;
 }
 
-/* স্লাইডারের ভেতরের কন্টেইনার */
-.screenshot-wrapper {
-    display: flex; /* ছবিগুলো পাশাপাশি সাজানোর জন্য */
-    gap: 15px; /* ছবির মাঝখানের ফাকা জায়গা */
-    width: max-content; /* ছবির সংখ্যা অনুযায়ী কন্টেইনার বড় হবে */
+.stat-bottom {
+    font-size: 10px;
+    color: #5f6368;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-top: 2px;
+    display: block;
 }
 
-/* স্লাইডারের ভেতরের ছবি */
-.screenshot-wrapper img {
-    width: 150px; /* ছবিতে সাইজ, মোবাইলের জন্য পারফেক্ট */
-    height: auto;
-    border-radius: 12px;
-    border: 2px solid #ddd;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: transform 0.3s;
+.stat-line {
+    width: 1px;
+    height: 25px;
+    background: #e8eaed;
 }
-
-.screenshot-wrapper img:hover {
-    transform: scale(1.05); /* ক্লিক করার সময় একটু বড় হবে */
-}
-
-/* স্লাইডারের স্ক্রলবার সুন্দর করার জন্য */
-.screenshots-container::-webkit-scrollbar {
-    height: 6px; /* স্ক্রলবারের উচ্চতা */
-}
-
-.screenshots-container::-webkit-scrollbar-thumb {
-    background: #24a159; /* স্ক্রলবারের কালার */
-    border-radius: 10px;
-}
-
-.screenshots-container::-webkit-scrollbar-track {
-    background: #f0f2f5; /* স্ক্রলবারের ট্র্যাকের কালার */
-}
-
-
-
-/* বিজ্ঞাপন বক্সের জন্য সহজ স্টাইল */
-.ad-space {
-    width: 100%;
-    max-width: 320px;
-    margin: 10px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none !important; /* ড্যাশ বর্ডার সরিয়ে দেবে */
-    min-height: 50px; /* চিকন ব্যানারের জন্য এটি যথেষ্ট */
-}
-
-.ad-space iframe {
-    border: none;
-    max-width: 100%;
-}
-
-
-
-
-
-
-
-
-
