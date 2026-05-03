@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MSQ V2RAY ONLINE - Install</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; margin: 0; padding: 0; background-color: #f9f9f9; text-align: center; color: #333; }
+        .top-container { padding: 50px 20px; background: #ffffff; }
+        .app-logo { width: 110px; height: 110px; border-radius: 22%; box-shadow: 0 4px 12px rgba(0,0,0,0.1); margin-bottom: 15px; }
+        h1 { font-size: 22px; margin: 5px 0; }
+        
+        /* প্রফেশনাল ইন্সটল বাটন */
+        .install-btn {
+            display: inline-block;
+            background-color: #01875f; /* প্লে-স্টোর গ্রিন */
+            color: white;
+            padding: 14px 70px;
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            margin: 25px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            position: relative;
+            cursor: pointer;
+            border: none;
+        }
+
+        .install-btn:active { transform: scale(0.96); }
+
+        /* স্পিনার এনিমেশন */
+        .spinner {
+            display: none;
+            width: 20px; height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-top: 3px solid #ffffff;
+            border-radius: 50%;
+            position: absolute; left: 25px; top: 13px;
+            animation: rotate 1s linear infinite;
+        }
+        @keyframes rotate { 100% { transform: rotate(360deg); } }
+
+        /* পপ-আপ মেসেজ */
+        #statusMsg { font-size: 14px; color: #01875f; font-weight: bold; margin-top: 10px; display: none; }
+
+        .screenshot-grid { display: flex; overflow-x: auto; gap: 12px; padding: 20px; justify-content: center; background: #eeeeee; }
+        .screenshot-grid img { width: 200px; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.1); }
+
+        /* বিজ্ঞাপনের জন্য স্টাইল */
+        .ad-container { margin: 30px 0; display: flex; justify-content: center; }
+    </style>
+</head>
+<body>
+
+    <div class="top-container">
+        <img src="logo.jpg" alt="App Logo" class="app-logo">
+        <h1>MSQ V2RAY ONLINE</h1>
+        <p style="color: #5f6368; font-size: 14px;">Official Version • 15.4 MB</p>
+
+        <button id="mainBtn" class="install-btn">
+            <span class="spinner" id="spinner"></span>
+            <span id="btnText">Install</span>
+        </button>
+        <div id="statusMsg">ফাইলটি ডাউনলোড হচ্ছে, দয়া করে অপেক্ষা করুন...</div>
+    </div>
+
+    <div class="screenshots-container">
+        <h3 style="text-align: left; padding-left: 20px; font-size: 16px; color: #202124;">App Screenshots</h3>
+        <div class="screenshot-grid">
+            <img src="ss1.jpg" alt="SS 1">
+            <img src="ss2.jpg" alt="SS 2">
+            <img src="ss3.jpg" alt="SS 3">
+        </div>
+    </div>
+
+
+    <!------  ADDDDS-------->
+    <div class="ad-container">
+       <script>
+  atOptions = {
+    'key' : 'a1f216dad1a4e0de65439c352f9b6c6a',
+    'format' : 'iframe',
+    'height' : 50,
+    'width' : 320,
+    'params' : {}
+  };
+</script>
+<script src="https://www.highperformanceformat.com/a1f216dad1a4e0de65439c352f9b6c6a/invoke.js"></script>
+
+    </div>
+
+    <script>
+        const mainBtn = document.getElementById('mainBtn');
+        const spinner = document.getElementById('spinner');
+        const btnText = document.getElementById('btnText');
+        const statusMsg = document.getElementById('statusMsg');
+
+        // আপনার গিটহাব APK লিংক
+        const apkUrl = "https://github.com/sohidqa8080/Msqqqqq/releases/download/v1.0/MSQ_V2RAY_ONLINEapp.fixbuild.vpncore.msqv2rayxonlinevfix-2.5.3.apk";
+
+        mainBtn.addEventListener('click', function() {
+            // এনিমেশন শুরু
+            spinner.style.display = 'block';
+            btnText.innerText = 'Pending...';
+            statusMsg.style.display = 'block';
+            mainBtn.style.backgroundColor = '#ccc';
+            mainBtn.disabled = true;
+
+            const link = document.createElement('a');
+            link.href = apkUrl;
+            link.download = "MSQ_V2RAY_ONLINE.apk"; 
+            document.body.appendChild(link);
+            
+            setTimeout(() => {
+                link.click();
+                btnText.innerText = 'Downloading...';
+                
+                setTimeout(() => {
+                    statusMsg.innerText = "ডাউনলোড শেষ হলে স্ক্রিনের ওপর থেকে 'Open' বাটনটি চাপুন।";
+                    spinner.style.display = 'none';
+                    btnText.innerText = 'Install';
+                    mainBtn.style.backgroundColor = '#01875f';
+                    mainBtn.disabled = false;
+                }, 5000);
+            }, 1500);
+        });
+    </script>
+
+</body>
+</html>
